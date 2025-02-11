@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For_You</title>
+    <link rel="stylesheet" href="./css/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
+</head>
+<style>
+</style>
+<body class="bg-pink-300">
+    <header class="flex w-full justify-around">
+        <h1 class="w-full text-2xl font-bold text-center">Tiempo: <span id="contador">00</span></h1>
+        <hr>
+        <h1 class="w-full text-2xl font-bold text-center">Puntaje: <span id="puntaje">00</span></h1>
+    </header>
+    <main>
+        <section  id="cuadro" class="relative rounded-2xl bg-green-400 p-3 w-[200px] text-center transition-all  hover:scale-x-[0.7] hover:scale-y-[0.9] hover:bg-green-700 active:scale-[0.3]">
+            <h4 class="text-white font-bold text-lg">Precioname</h4>
+        </section>
+    </main>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+<script>
+    const $ = element => document.querySelector(element);
+    var time_out =  10;
+    var puntaje = 0;
+
+    setInterval(() => {
+        if(time_out >= 0){
+            $('#contador').innerHTML = time_out;
+            time_out--;
+            console.log(time_out);
+        }
+    }, 1000);
+
+
+
+    $('#cuadro').addEventListener("click", function(){ 
+        mover();
+        puntaje++;
+        $('#puntaje').innerHTML = puntaje;
+    });
+
+    function mover() {
+        const div = $('#cuadro');
+        const anchoPantalla = window.innerWidth;
+        const altoPantalla = window.innerHeight;
+        const anchoDiv = div.offsetWidth;
+        const altoDiv = div.offsetHeight;
+    
+        const nuevaPosicionX = Math.floor(Math.random() * (anchoPantalla - anchoDiv));
+        const nuevaPosicionY = Math.floor(Math.random() * (altoPantalla - altoDiv));
+
+        div.style.left = nuevaPosicionX + "px";
+        div.style.top = nuevaPosicionY + "px";
+    }
+
+
+    /*setInterval(() => {
+        mover();
+    }, 1000);*/
+</script>
+</html>
