@@ -8,6 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
 <style>
+    @font-face {
+        font-family: 'halu';
+        src: url('./assets/fonts/Halu.woff') format('woff');
+    }
+
     body{
         background-color: rgb(255, 176, 251);
         min-width: 100vw;
@@ -15,6 +20,9 @@
         display: flex;
         justify-content: center;
         align-items: center;
+        font-family: halu;
+        display: flex;
+        flex-direction: column;
     }
 
     #contenedor{
@@ -35,11 +43,6 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        background-color: rgb(162, 238, 225);
-        border-radius: 15px;
-        border: 5px solid grey;
-        padding: 20px;
-        z-index: 9999;
     }
 
     .sobre{
@@ -102,6 +105,15 @@
         }
     }
 
+    .background-gradient {
+        position: absolute;
+        inset: 0;
+        z-index: -10;
+        height: 100%;
+        width: 100%;
+        background: radial-gradient(125% 125% at 50% 10%, #fff 40%, #63e 100%);
+    }
+
     @keyframes abrir {
         0%{transform: rotate3d(1, 0, 0, 0deg);}
         100%{transform: rotate3d(1, 0, 0, 180deg);}
@@ -133,21 +145,26 @@
             max-width: 350px;
         }
 
+        #contenedor{
+            height: 200px;
+        }
+
         #contenedor svg{
             width: 480px;
         }
     }
 </style>
 <body>
+    <div class="background-gradient"></div>
     <section class="carta">
         <svg class="sobre" id="sobre_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 700 300">
-            <path fill-rule="nonzero" fill="white" fill-opacity="1" d="M 0 0 L 700 0 L 700 300 Z"/>
+            <path style="fill: rgb(216, 245, 241);" fill-rule="nonzero" fill-opacity="1" d="M 0 0 L 700 0 L 700 300 Z"/>
             <path style="fill: rgb(209, 36, 36);" id="sobre_tapa" fill-rule="nonzero" fill="violet" fill-opacity="1" d="M 700 0 L 350 150 L 0 0 Z"/>
         </svg>
 
         <svg style="z-index: 9999;" class="sobre"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 700 300">
             <path style="fill: rgb(187, 67, 67);" fill-rule="nonzero" fill-opacity="1" d="M 0 0 L 350 150 L 700 0 L 700 300 L 0 300 Z"/>
-            <path style="fill: rgb(160, 35, 35);" fill-rule="nonzero" fill-opacity="1" d="M 0 300 L 350 150 L 700 300 Z"/>
+            <path style="fill: rgb(160, 35, 35);" fill-rule="nonzero" fill-opacity="1" d="M 0 300 L 350 120 L 700 300 Z"/>
         </svg>
 
         <article id="contenedor">
@@ -204,6 +221,10 @@
                 <path id="grupo_3_h_2" fill-rule="nonzero" fill="rgb(37.255859%, 82.8125%, 37.255859%)" fill-opacity="1" d="M 1485.558594 1770.441406 C 1531.441406 1334.398438 1490.238281 1075 1460.308594 913.339844 C 1508.230469 969.46875 1562.660156 1335.230469 1485.558594 1770.441406 Z M 1485.558594 1770.441406 "/>
             </svg>
         </article>
+    </section>
+    <section>
+        <h1>Gracias por todo</h1>
+        <button type="button">Reproducir cancion aleatoria</button>
     </section>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
