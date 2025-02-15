@@ -14,44 +14,26 @@
     }
 </style>
 <body class="bg-pink-300">
-    <header class="flex flex-col w-full items-center">
-        <h1 class="text-lg font-[halu]">Para desbloquear tu regalo consigue 20 puntos en 30 segundos.</h1>
-        <div class="flex justify-around">
-            <h4 class="w-full text-2xl font-bold text-center">Tiempo: <span id="contador">00</span></h4>
-            <hr>
-            <h4 class="w-full text-2xl font-bold text-center">Puntaje: <span id="puntaje">00</span></h4>
-        </div>
+    <header id="marcador" class="flex w-full items-center px-5 transition-all opacity-0">
+        <h4 class="w-full text-2xl font-bold text-center">Tiempo: <span id="contador">00</span></h4>
+        <hr>
+        <h4 class="w-full text-2xl font-bold text-center">Puntaje: <span id="puntaje">00</span></h4>
     </header>
-    <main>
-        <section  id="cuadro" class="relative rounded-2xl bg-green-400 p-3 w-[200px] text-center transition-all  hover:scale-x-[0.7] hover:scale-y-[0.9] hover:bg-green-700 active:scale-[0.3]">
-            <h4 class="text-white font-bold text-lg">Precioname</h4>
+    <main class="flex justify-center overflow-hidden min-h-[90vh]">
+        <section id="dialogo" class="transition-all opacity-100 scale-100 absolute w-[50vw] h-[50vh] bg-blue-300 rounded-lg p-3 gray-400 flex justify-center items-center flex-col">
+            <h1 class="text-3xl mb-5 text-center">Para desbloquear tu regalo consigue 20 puntos en 30 segundos.</h1>
+            <div class="text-3xl rounded-full w-[150px] h-[150px] border-[5px] border-b-blue-300 p-2 transition-all group active:p-0">
+                <button type="button" class="bg-white rounded-full w-full h-full p-2 group-active:bg-green-300 group-active:rotate-[30deg]" onclick="iniciar();">Iniciar</button>
+            </div>
         </section>
+        <button type="button" id="cuadro" class="opacity-0 relative rounded-2xl bg-green-400 px-2 md:p-3 w-[150px] h-[50px] md:w-[200px] text-center transition-all  hover:scale-x-[0.7] hover:scale-y-[0.9] hover:bg-green-700 active:scale-[0.3]">
+            <h4 class="text-white font-bold">Precioname</h4>
+        </button>
     </main>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 <script>
     const $ = element => document.querySelector(element);
-    var time_out =  30;
-    var puntaje = 0;
-
-    setInterval(() => {
-        if(time_out >= 0){
-            $('#contador').innerHTML = time_out;
-            time_out--;
-            console.log(time_out);
-        }
-    }, 1000);
-
-
-
-    $('#cuadro').addEventListener("click", function(){
-        puntaje++;
-        mover();
-        $('#puntaje').innerHTML = puntaje;
-        if(puntaje>=20){
-           window.location.href = 'tulipan.html';
-        }
-    });
 
     function mover() {
         const div = $('#cuadro');
@@ -60,16 +42,51 @@
         const anchoDiv = div.offsetWidth;
         const altoDiv = div.offsetHeight;
     
-        const nuevaPosicionX = Math.floor(Math.random() * (anchoPantalla - anchoDiv));
-        const nuevaPosicionY = Math.floor(Math.random() * (altoPantalla - altoDiv));
+        const nuevaPosicionX = Math.floor(Math.random() * (anchoPantalla - (anchoDiv+50)));
+        const nuevaPosicionY = Math.floor(Math.random() * (altoPantalla - (altoDiv+100)));
 
         div.style.left = nuevaPosicionX + "px";
         div.style.top = nuevaPosicionY + "px";
     }
 
+    function iniciar() {
+        document.getElementById('dialogo').style.opacity = '0';
+        document.getElementById('cuadro').style.opacity = '1';
+        document.getElementById('marcador').style.opacity = '1';
+        document.getElementById('dialogo').style.display = 'none';
 
-    setInterval(() => {
-        mover();
-    }, 800);
+        var time_out =  3;
+        var puntaje = 0;
+
+        setInterval(() => {
+            if(time_out >= 0){
+                $('#contador').innerHTML = time_out;
+                time_out--;
+                console.log(time_out);
+            }else{
+                alert('Haz perdido :( itentalo otra vez, sip?');
+                window.location.href = 'index.html';
+            }
+        }, 1000);
+
+
+
+        $('#cuadro').addEventListener("click", function(){
+            puntaje++;
+            mover();
+            $('#puntaje').innerHTML = puntaje;
+            if(time_out>0){
+                if(puntaje>=20){
+                    alert('Felicitades haz ganado, reclama tu premio :)')
+                    window.location.href = 'tulipan.html';
+                }
+            }
+        });
+
+
+        setInterval(() => {
+            mover();
+        }, 800);
+    }
 </script>
 </html>
