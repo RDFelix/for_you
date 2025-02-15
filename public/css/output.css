@@ -2130,6 +2130,12 @@
       padding: calc(var(--spacing) * 3);
     }
   }
+  .md\:text-3xl {
+    @media (width >= 48rem) {
+      font-size: var(--text-3xl);
+      line-height: var(--tw-leading, var(--text-3xl--line-height));
+    }
+  }
 }
 @property --tw-translate-x {
   syntax: "*";
