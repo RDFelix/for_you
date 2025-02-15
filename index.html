@@ -13,13 +13,13 @@
         src: url('./assets/fonts/Halu.woff') format('woff');
     }
 </style>
-<body class="bg-pink-300">
+<body class="bg-pink-300 overflow-hidden">
     <header id="marcador" class="flex w-full items-center px-5 transition-all opacity-0">
         <h4 class="w-full text-2xl font-bold text-center">Tiempo: <span id="contador">00</span></h4>
         <hr>
         <h4 class="w-full text-2xl font-bold text-center">Puntaje: <span id="puntaje">00</span></h4>
     </header>
-    <main class="flex justify-center overflow-hidden min-h-[90vh]">
+    <main class="flex justify-center h-[90vh] w-full">
         <section id="dialogo" class="transition-all opacity-100 scale-100 absolute w-[50vw] h-[50vh] bg-blue-300 rounded-lg p-3 gray-400 flex justify-center items-center flex-col">
             <h1 class="text-3xl mb-5 text-center">Para desbloquear tu regalo consigue 20 puntos en 30 segundos.</h1>
             <div class="text-3xl rounded-full w-[150px] h-[150px] border-[5px] border-b-blue-300 p-2 transition-all group active:p-0">
