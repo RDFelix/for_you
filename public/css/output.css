@@ -1401,6 +1401,9 @@
   .align-top {
     vertical-align: top;
   }
+  .font-\[halu\] {
+    font-family: halu;
+  }
   .text-2xl {
     font-size: var(--text-2xl);
     line-height: var(--tw-leading, var(--text-2xl--line-height));

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>For_You</title>
+    <title>Es tuyo</title>
     <link rel="stylesheet" href="./public/css/output.css">
     <link href="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.css" rel="stylesheet" />
 </head>
@@ -12,335 +12,64 @@
         font-family: 'halu';
         src: url('./assets/fonts/Halu.woff') format('woff');
     }
-
-    body{
-        background-color: rgb(255, 176, 251);
-        min-width: 100vw;
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        font-family: halu;
-        display: flex;
-        flex-direction: column;
-    }
-
-    #contenedor{
-        height: 350px;
-        width: 400px;
-        position: relative;
-        overflow: hidden;
-        transform: translateY(-100px);
-        >svg{
-            position: absolute;
-            width: auto;
-            height: 600px;
-            transform: translate(-100px, -70px);
-        }
-    }
-
-    .carta{
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .sobre{
-        width: 50vw;
-        height: 600px;
-        position: absolute;
-        min-width: 230px;
-        max-width: 300px;
-        filter: drop-shadow(5px 5px 10px rgb(80, 80, 80));
-        
-        >*{transition: all .5s ease-in-out;}
-        
-    }
-
-    #sobre_2{
-        filter: drop-shadow(0 0 10px rgb(80, 80, 80));
-        >#sobre_tapa{
-            transform: rotate3d(1, 0, 0, 180deg);
-            animation: abrir 3s ease-in-out;
-        }
-    }
-
-
-    @keyframes rotar {
-        0%{transform: rotate3d(1, 0, 0, 0deg);}
-        50%{transform: rotate3d(1, 0, 0, 180deg);}
-        100%{transform: rotate3d(1, 0, 0, 0deg);}
-    }
-
-    #tierra{
-        transition: opacity 1s ease-in-out;
-        opacity: 0;
-    }
-
-    #tallos{
-        >path{
-            transition: opacity 2s ease-in-out;
-            transition: transform 1s ease-in-out;
-            opacity: 0;
-            transform: translateY(500px);
-        }
-    }
-
-    .petalos{
-        >path{
-            transition: all .85s ease-in-out;
-            transition: opacity 1.3s ease-in-out;
-            opacity: 0;
-            scale: 0.9;
-            
-        }
-    }
-
-    .grupos{
-        >path{
-            transition: opacity 2s ease-in-out;
-            transition: transform 1s ease-in-out;
-            opacity: 0;
-            transform: translateY(500px);
-        }
-    }
-
-    .background-gradient {
-        position: absolute;
-        inset: 0;
-        z-index: -10;
-        height: 100%;
-        width: 100%;
-        background: radial-gradient(125% 125% at 50% 10%, #fff 40%, #63e 100%);
-    }
-
-    @keyframes abrir {
-        0%{transform: rotate3d(1, 0, 0, 0deg);}
-        100%{transform: rotate3d(1, 0, 0, 180deg);}
-
-    }
-
-    @keyframes viento_0 {
-        0%{transform: rotate(0deg);}
-        25%{transform: rotate(-1deg);}
-        50%{transform: rotate(0deg);}
-        75%{transform: rotate(1deg);}
-        100%{transform: rotate(0deg);}
-    }
-
-    @keyframes viento_1 {
-        0%{transform: rotate(0deg);}
-        25%{transform: rotate(1deg);}
-        50%{transform: rotate(0deg);}
-        75%{transform: rotate(-1deg);}
-        100%{transform: rotate(0deg);}
-    }
-
-
-    @media only screen and (max-width: 1000px) {
-        .carta{
-            padding: 5px;
-            width: 55vw;
-            min-width: 300px;
-            max-width: 350px;
-        }
-
-        #contenedor{
-            height: 200px;
-        }
-
-        #contenedor svg{
-            width: 480px;
-        }
-    }
 </style>
-<body>
-    <div class="background-gradient"></div>
-    <section class="carta">
-        <svg class="sobre" id="sobre_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 700 300">
-            <path style="fill: rgb(216, 245, 241);" fill-rule="nonzero" fill-opacity="1" d="M 0 0 L 700 0 L 700 300 Z"/>
-            <path style="fill: rgb(209, 36, 36);" id="sobre_tapa" fill-rule="nonzero" fill="violet" fill-opacity="1" d="M 700 0 L 350 150 L 0 0 Z"/>
-        </svg>
-
-        <svg style="z-index: 9999;" class="sobre"  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 700 300">
-            <path style="fill: rgb(187, 67, 67);" fill-rule="nonzero" fill-opacity="1" d="M 0 0 L 350 150 L 700 0 L 700 300 L 0 300 Z"/>
-            <path style="fill: rgb(160, 35, 35);" fill-rule="nonzero" fill-opacity="1" d="M 0 300 L 350 120 L 700 300 Z"/>
-        </svg>
-
-        <article id="contenedor">
-            <svg id="tallos" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3000" height="3000" viewBox="0 0 3000 3000">
-                <path id="tallo_1" fill-rule="nonzero" fill="rgb(12.939453%, 47.068787%, 12.939453%)" fill-opacity="1" d="M 1724.941406 589.988281 C 1667.859375 705.890625 1616.148438 825.039062 1578.988281 949.21875 C 1542.71875 1070.410156 1520.660156 1195.308594 1506.980469 1320.730469 C 1490.269531 1474.039062 1483 1628.039062 1475.859375 1781.808594 L 1487.050781 1782.328125 C 1494.199219 1628.570312 1501.460938 1474.800781 1518.128906 1321.941406 C 1531.75 1197.019531 1553.710938 1072.789062 1589.730469 952.441406 C 1626.640625 829.109375 1678.089844 710.519531 1735 594.929688 Z M 1724.941406 589.988281 "/>
-                <path id="tallo_4" fill-rule="nonzero" fill="rgb(12.939453%, 47.068787%, 12.939453%)" fill-opacity="1" d="M 1133.730469 768.789062 L 1124.289062 774.839844 C 1185.53125 870.339844 1246.109375 966.359375 1297.539062 1067.230469 C 1344.691406 1159.738281 1383.070312 1256.761719 1410.359375 1356.910156 C 1451.261719 1507.039062 1471.019531 1662.171875 1483.601562 1817.308594 L 1494.769531 1816.410156 C 1482.171875 1660.921875 1462.328125 1505.109375 1421.160156 1353.960938 C 1393.660156 1253.011719 1354.980469 1155.289062 1307.511719 1062.148438 C 1255.769531 960.660156 1194.988281 864.339844 1133.730469 768.789062 Z M 1133.730469 768.789062 "/>
-                <path id="tallo_2" fill-rule="nonzero" fill="rgb(12.939453%, 47.068787%, 12.939453%)" fill-opacity="1" d="M 1283.339844 582.410156 L 1273.191406 587.171875 C 1294.640625 632.871094 1312.710938 680.160156 1328.480469 728.210938 C 1371.679688 859.730469 1398.089844 996.269531 1418.890625 1133.269531 C 1451.621094 1348.730469 1467.789062 1566.398438 1483.621094 1783.921875 L 1494.808594 1783.109375 C 1478.96875 1565.578125 1462.789062 1347.621094 1429.96875 1131.589844 C 1409.121094 994.300781 1382.628906 857.140625 1339.148438 724.710938 C 1323.261719 676.328125 1305.019531 628.609375 1283.339844 582.410156 Z M 1283.339844 582.410156 "/>
-                <path id="tallo_3" fill-rule="nonzero" fill="rgb(12.939453%, 47.068787%, 12.939453%)" fill-opacity="1" d="M 1535.441406 655.03125 C 1516.871094 764.460938 1497.539062 873.980469 1484.640625 984.511719 C 1472.148438 1091.46875 1467.191406 1199.199219 1468.609375 1306.820312 C 1470.660156 1463.011719 1482.179688 1618.789062 1494.871094 1774.21875 L 1506.050781 1773.320312 C 1493.359375 1617.941406 1481.859375 1462.410156 1479.808594 1306.679688 C 1478.398438 1199.5 1483.339844 1092.238281 1495.769531 985.808594 C 1508.621094 875.710938 1527.910156 766.378906 1546.488281 656.898438 Z M 1535.441406 655.03125 "/>
-            </svg>
-    
-            <svg id="rosa" class="petalos" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3000" height="3000" viewBox="0 0 3000 3000">
-                <path id="rosa_4" fill-rule="nonzero" fill="rgb(78.90625%, 47.851562%, 72.851562%)" fill-opacity="1" d="M 1724.761719 606.441406 C 1813.398438 646.859375 1820.160156 484.929688 1872.648438 473.359375 C 1903 466.679688 1732.039062 444.621094 1724.761719 606.441406 Z M 1724.761719 606.441406 "/>
-                <path id="rosa_3" fill-rule="nonzero" fill="rgb(83.984375%, 50.976562%, 77.734375%)" fill-opacity="1" d="M 1724.761719 606.441406 C 1657.660156 477.109375 1804.058594 451.789062 1823.75 420.96875 C 1845.070312 387.601562 1820.359375 513.160156 1724.761719 606.441406 Z M 1724.761719 606.441406 "/>
-                <path id="rosa_2" fill-rule="nonzero" fill="rgb(87.109375%, 52.929688%, 80.46875%)" fill-opacity="1" d="M 1724.761719 606.441406 C 1808.089844 644.441406 1852.011719 536.808594 1888 538.429688 C 1931.050781 540.371094 1771.328125 459.410156 1724.761719 606.441406 Z M 1724.761719 606.441406 "/>
-                <path id="rosa_1" fill-rule="nonzero" fill="rgb(91.40625%, 68.554688%, 86.71875%)" fill-opacity="1" d="M 1724.761719 606.441406 C 1644.121094 551.761719 1731.140625 467.960938 1758.089844 418.710938 C 1777.109375 383.980469 1799.199219 533.808594 1724.761719 606.441406 Z M 1724.761719 606.441406 "/>
-            </svg>
-    
-            <svg id="rojo" class="petalos" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3000" height="3000" viewBox="0 0 3000 3000">
-                <path id="rojo_4" fill-rule="nonzero" fill="rgb(100%, 26.660156%, 26.660156%)" fill-opacity="1" d="M 1132.398438 784.210938 C 1053.199219 812.039062 1057 678.28125 1012.839844 664.300781 C 987.308594 656.210938 1138.679688 644.769531 1132.398438 784.210938 Z M 1132.398438 784.210938 "/>
-                <path id="rojo_3" fill-rule="nonzero" fill="rgb(100%, 29.80957%, 29.80957%)" fill-opacity="1" d="M 1132.398438 784.210938 C 1200 678.421875 1080.46875 645.769531 1061.808594 617.378906 C 1047.359375 595.398438 1057.570312 696.769531 1132.398438 784.210938 Z M 1132.398438 784.210938 "/>
-                <path id="rojo_2" fill-rule="nonzero" fill="rgb(100%, 33.325195%, 33.325195%)" fill-opacity="1" d="M 1132.398438 784.210938 C 1057.941406 810.371094 1029.328125 719.558594 997.566406 713.210938 C 961.15625 705.929688 1103.808594 654.429688 1132.398438 784.210938 Z M 1132.398438 784.210938 "/>
-                <path id="rojo_1" fill-rule="nonzero" fill="rgb(100%, 41.967773%, 41.967773%)" fill-opacity="1" d="M 1132.398438 784.210938 C 1205.839844 743.53125 1137.648438 664.878906 1118.328125 620.53125 C 1104.699219 589.238281 1074.140625 716.121094 1132.398438 784.210938 Z M 1132.398438 784.210938 "/>
-            </svg>
-    
-            <svg id="rosados" class="petalos" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3000" height="3000" viewBox="0 0 3000 3000">
-                <path id="rosados_4" fill-rule="nonzero" fill="rgb(100%, 30.589294%, 58.396912%)" fill-opacity="1" d="M 1282.390625 590.429688 C 1184.078125 593.03125 1206.058594 442.488281 1163.878906 402.480469 C 1138.339844 378.25 1277.738281 414.660156 1282.390625 590.429688 Z M 1282.390625 590.429688 "/>
-                <path id="rosados_3" fill-rule="nonzero" fill="rgb(100%, 40.380859%, 63.867188%)" fill-opacity="1" d="M 1282.390625 590.429688 C 1373.058594 546.191406 1245 436.839844 1224.570312 382.410156 C 1210.171875 344.019531 1198.039062 480.808594 1282.390625 590.429688 Z M 1282.390625 590.429688 "/>
-                <path id="rosados_2" fill-rule="nonzero" fill="rgb(100%, 50.193787%, 69.726562%)" fill-opacity="1" d="M 1282.390625 590.429688 C 1185.601562 618.890625 1183.570312 475.28125 1145.230469 446.179688 C 1115.738281 423.78125 1299.03125 462.699219 1282.390625 590.429688 Z M 1282.390625 590.429688 "/>
-                <path id="rosados_1" fill-rule="nonzero" fill="rgb(100%, 66.601562%, 80.076599%)" fill-opacity="1" d="M 1282.390625 590.429688 C 1373.058594 546.191406 1284.171875 450.621094 1275.699219 393.109375 C 1269.75 352.640625 1216.710938 505.078125 1282.390625 590.429688 Z M 1282.390625 590.429688 "/>
-            </svg>
-    
-            <svg id="amarillo" class="petalos" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3000" height="3000" viewBox="0 0 3000 3000">
-                <path id="amarillo_4" fill-rule="nonzero" fill="rgb(94.53125%, 75.78125%, 0%)" fill-opacity="1" d="M 1540.03125 669.519531 C 1627.828125 681.871094 1597.898438 519.480469 1611.429688 496.351562 C 1625.980469 471.46875 1529.390625 524.679688 1540.03125 669.519531 Z M 1540.03125 669.519531 "/>
-                <path id="amarillo_3" fill-rule="nonzero" fill="rgb(98.4375%, 78.90625%, 0%)" fill-opacity="1" d="M 1540.03125 669.519531 C 1450.511719 612.320312 1560.878906 507.511719 1562.5 471.441406 C 1563.898438 440.269531 1599.339844 563.410156 1540.03125 669.519531 Z M 1540.03125 669.519531 "/>
-                <path id="amarillo_2" fill-rule="nonzero" fill="rgb(100%, 80.076599%, 0%)" fill-opacity="1" d="M 1540.03125 669.519531 C 1646.808594 684.550781 1604.679688 565.550781 1632.191406 522.5 C 1649.109375 496.019531 1517.75 590.769531 1540.03125 669.519531 Z M 1540.03125 669.519531 "/>
-                <path id="amarillo_1" fill-rule="nonzero" fill="rgb(100%, 83.201599%, 16.479492%)" fill-opacity="1" d="M 1540.03125 669.519531 C 1442.339844 638.449219 1526.96875 535.691406 1520.589844 497.089844 C 1514.710938 461.53125 1586.210938 586.898438 1540.03125 669.519531 Z M 1540.03125 669.519531 "/>
-            </svg>
-            
-            <svg class="grupos" id="grupo_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3000" height="3000" viewBox="0 0 3000 3000">
-                <path id="grupo_1_h_1" fill-rule="nonzero" fill="rgb(17.259216%, 62.693787%, 17.259216%)" fill-opacity="1" d="M 1489.328125 1944.5 C 1401.921875 1268.640625 1173.710938 1020.851562 1034.039062 871.699219 C 1321.519531 1051.460938 1509.460938 1549.808594 1489.328125 1944.5 Z M 1489.328125 1944.5 "/>
-                <path id="grupo_1_h_2" fill-rule="nonzero" fill="rgb(17.259216%, 62.693787%, 17.259216%)" fill-opacity="1" d="M 1489.679688 1937.230469 C 1529.820312 1486.480469 1720.191406 1317.859375 1836.851562 1216.320312 C 1589.558594 1340.738281 1449.378906 1675.21875 1489.679688 1937.230469 Z M 1489.679688 1937.230469 "/>
-                <path id="grupo_1_h_3" fill-rule="nonzero" fill="rgb(17.259216%, 62.693787%, 17.259216%)" fill-opacity="1" d="M 1489.320312 1944.5 C 1519.039062 1284.429688 1701.460938 938.859375 1815.828125 759.011719 C 1585.179688 969.789062 1420.589844 1523.230469 1489.320312 1944.5 Z M 1489.320312 1944.5 "/>
-            </svg>
-    
-            <svg class="grupos" id="grupo_2" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3000" height="3000" viewBox="0 0 3000 3000">
-                <path id="grupo_2_h_1" fill-rule="nonzero" fill="rgb(21.556091%, 78.514099%, 21.556091%)" fill-opacity="1" d="M 1489.679688 1937.230469 C 1537.949219 1305.828125 1731.5 1066.46875 1850.089844 922.308594 C 1600.359375 1100.828125 1454.058594 1571.351562 1489.679688 1937.230469 Z M 1489.679688 1937.230469 "/>
-                <path id="grupo_2_h_2" fill-rule="nonzero" fill="rgb(21.556091%, 78.514099%, 21.556091%)" fill-opacity="1" d="M 1485.488281 1770.921875 C 1456.429688 1396.410156 1357.851562 1139.859375 1258.71875 1003.988281 C 1395.660156 1091.488281 1528.410156 1454.191406 1485.488281 1770.921875 Z M 1485.488281 1770.921875 "/>
-                <path id="grupo_2_h_3" fill-rule="nonzero" fill="rgb(21.556091%, 78.514099%, 21.556091%)" fill-opacity="1" d="M 1489.320312 1944.5 C 1483.871094 1477.558594 1553.769531 1048.988281 1651.339844 873.5 C 1511.25 1022.210938 1428.609375 1494.929688 1489.320312 1944.5 Z M 1489.320312 1944.5 "/>
-                <path id="grupo_2_h_4" fill-rule="nonzero" fill="rgb(21.556091%, 78.514099%, 21.556091%)" fill-opacity="1" d="M 1489.328125 1944.5 C 1393.488281 1455.859375 1162.308594 1274.238281 1020.839844 1164.890625 C 1310.410156 1298.179688 1504.5 1660.03125 1489.328125 1944.5 Z M 1489.328125 1944.5 "/>
-            </svg>
-    
-            <svg class="grupos" id="grupo_3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="3000" height="3000" viewBox="0 0 3000 3000">
-                <path id="grupo_3_h_1" fill-rule="nonzero" fill="rgb(37.255859%, 82.8125%, 37.255859%)" fill-opacity="1" d="M 1485.488281 1770.921875 C 1494.140625 1137.730469 1322.878906 881.949219 1217.71875 727.71875 C 1450.398438 927.960938 1553.839844 1409.71875 1485.488281 1770.921875 Z M 1485.488281 1770.921875 "/>
-                <path id="grupo_3_h_2" fill-rule="nonzero" fill="rgb(37.255859%, 82.8125%, 37.255859%)" fill-opacity="1" d="M 1485.558594 1770.441406 C 1531.441406 1334.398438 1490.238281 1075 1460.308594 913.339844 C 1508.230469 969.46875 1562.660156 1335.230469 1485.558594 1770.441406 Z M 1485.558594 1770.441406 "/>
-            </svg>
-        </article>
-    </section>
-    <section class="flex flex-col items-center md:translate-y-[-100px]">
-        <article class="w-[250px]">
-            <p class="text-2xl text-center mb-2">"Este es tu regalo, aprecio la compañia de aquellos que me soportan"</p>
-            <p class="text-lg px-2 rounded-[50px] bg-blue-500 w-[140px] text-gray-800">Att: Felix Gabriel</p>
-        </article>
-    </section>
+<body class="bg-pink-300">
+    <header class="flex flex-col w-full items-center">
+        <h1 class="text-lg font-[halu]">Para desbloquear tu regalo consigue 20 puntos en 30 segundos.</h1>
+        <div class="flex justify-around">
+            <h4 class="w-full text-2xl font-bold text-center">Tiempo: <span id="contador">00</span></h4>
+            <hr>
+            <h4 class="w-full text-2xl font-bold text-center">Puntaje: <span id="puntaje">00</span></h4>
+        </div>
+    </header>
+    <main>
+        <section  id="cuadro" class="relative rounded-2xl bg-green-400 p-3 w-[200px] text-center transition-all  hover:scale-x-[0.7] hover:scale-y-[0.9] hover:bg-green-700 active:scale-[0.3]">
+            <h4 class="text-white font-bold text-lg">Precioname</h4>
+        </section>
+    </main>
 </body>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
 <script>
-    const $ = element => document.getElementById(element);
-    
-    function mostrar_grupos(grupo, numero) {
-        var h = 1;
-        let hojas = setInterval(() => {
-            if(h<=numero){
-                $(`${grupo}_h_${h}`).style.opacity = "1";
-                $(`${grupo}_h_${h}`).style.transform = "translateY(-70px)";
-                h++;
-            }
-        }, 750);
-        setTimeout(() => {clearInterval(hojas);}, 4000);
-    }
+    const $ = element => document.querySelector(element);
+    var time_out =  30;
+    var puntaje = 0;
 
-    function mostrar_petalos(flor) {
-        var p = 1;
-        let petalos = setInterval(() => {
-            if(p<=4){
-                $(`${flor}_${p}`).style.opacity = "1";
-                $(`${flor}_${p}`).style.scale = "1";
-                p++;
-            }
-        }, 750);
-        setTimeout(() => {clearInterval(petalos);}, 4000);
-    }
-
-    function mostrar_tallos() {
-        var t = 1;
-        let tallos = setInterval(() => {
-            if(t<=4){
-                $(`tallo_${t}`).style.opacity = "1";
-                $(`tallo_${t}`).style.transform = "translateY(-70px)";
-                t++;
-            }
-        }, 750);
-        setTimeout(() => {clearInterval(tallos);}, 4000);
-    }
-
-    setTimeout(() => {
-        mostrar_grupos("grupo_2", 4);
+    setInterval(() => {
+        if(time_out >= 0){
+            $('#contador').innerHTML = time_out;
+            time_out--;
+            console.log(time_out);
+        }
     }, 1000);
 
-    setTimeout(() => {
-        mostrar_grupos("grupo_3", 2);
-    }, 1500);
 
 
-    setTimeout(() => {
-        mostrar_tallos();
-    }, 5000);
+    $('#cuadro').addEventListener("click", function(){
+        puntaje++;
+        mover();
+        $('#puntaje').innerHTML = puntaje;
+        if(puntaje>=20){
+           window.location.href = 'tulipan.html';
+        }
+    });
 
+    function mover() {
+        const div = $('#cuadro');
+        const anchoPantalla = window.innerWidth;
+        const altoPantalla = window.innerHeight;
+        const anchoDiv = div.offsetWidth;
+        const altoDiv = div.offsetHeight;
     
-    setTimeout(() => {
-        mostrar_petalos("rosa");
-    }, 7000);
+        const nuevaPosicionX = Math.floor(Math.random() * (anchoPantalla - anchoDiv));
+        const nuevaPosicionY = Math.floor(Math.random() * (altoPantalla - altoDiv));
 
-    setTimeout(() => {
-        mostrar_petalos("rosados");
-    }, 7700);
-
-    setTimeout(() => {
-        mostrar_petalos("rojo");
-    }, 8200);
-
-    setTimeout(() => {
-        mostrar_petalos("amarillo");
-    }, 9500);
-
-    var speed = 30;
-
-    setTimeout(() => {
-        $(`grupo_1_h_1`).style.animation = `viento_${Math.round(Math.random()%2)} ${speed}s ease-in-out infinite`;
-        $(`grupo_1_h_2`).style.animation = `viento_${Math.round(Math.random()%2)} ${speed}s ease-in-out infinite`;
-        $(`grupo_1_h_3`).style.animation = `viento_${Math.round(Math.random()%2)} ${speed}s ease-in-out infinite`;
-
-        $(`grupo_2_h_1`).style.animation = `viento_${Math.round(Math.random()%2)} ${speed}s ease-in-out infinite`;
-        $(`grupo_2_h_2`).style.animation = `viento_${Math.round(Math.random()%2)} ${speed}s ease-in-out infinite`;
-        $(`grupo_2_h_3`).style.animation = `viento_${Math.round(Math.random()%2)} ${speed}s ease-in-out infinite`;
-        $(`grupo_2_h_4`).style.animation = `viento_${Math.round(Math.random()%2)} ${speed}s ease-in-out infinite`;
-
-        $(`grupo_3_h_1`).style.animation = `viento_${Math.round(Math.random()%2)} ${speed}s ease-in-out infinite`;
-        $(`grupo_3_h_2`).style.animation = `viento_${Math.round(Math.random()%2)} ${speed}s ease-in-out infinite`;
-
-        $(`tallo_1`).style.animation = `viento_0 ${speed}s ease-in-out infinite`;
-        $(`rosa_1`).style.animation = `viento_0 ${speed}s ease-in-out infinite`;
-        $(`rosa_2`).style.animation = `viento_0 ${speed}s ease-in-out infinite`;
-        $(`rosa_3`).style.animation = `viento_0 ${speed}s ease-in-out infinite`;
-        $(`rosa_4`).style.animation = `viento_0 ${speed}s ease-in-out infinite`;
+        div.style.left = nuevaPosicionX + "px";
+        div.style.top = nuevaPosicionY + "px";
+    }
 
 
-        $(`tallo_2`).style.animation = `viento_1 ${speed}s ease-in-out infinite`;
-        $(`rosados_1`).style.animation = `viento_1 ${speed}s ease-in-out infinite`;
-        $(`rosados_2`).style.animation = `viento_1 ${speed}s ease-in-out infinite`;
-        $(`rosados_3`).style.animation = `viento_1 ${speed}s ease-in-out infinite`;
-        $(`rosados_4`).style.animation = `viento_1 ${speed}s ease-in-out infinite`;
-
-
-        $(`tallo_3`).style.animation = `viento_1 ${speed}s ease-in-out infinite`;
-        $(`amarillo_1`).style.animation = `viento_1 ${speed}s ease-in-out infinite`;
-        $(`amarillo_2`).style.animation = `viento_1 ${speed}s ease-in-out infinite`;
-        $(`amarillo_3`).style.animation = `viento_1 ${speed}s ease-in-out infinite`;
-        $(`amarillo_4`).style.animation = `viento_1 ${speed}s ease-in-out infinite`;
-
-        $(`tallo_4`).style.animation = `viento_0 ${speed}s ease-in-out infinite`;
-        $(`rojo_1`).style.animation = `viento_0 ${speed}s ease-in-out infinite`;
-        $(`rojo_2`).style.animation = `viento_0 ${speed}s ease-in-out infinite`;
-        $(`rojo_3`).style.animation = `viento_0 ${speed}s ease-in-out infinite`;
-        $(`rojo_4`).style.animation = `viento_0 ${speed}s ease-in-out infinite`;
-    }, 15000);
-    
-
+    setInterval(() => {
+        mover();
+    }, 800);
 </script>
 </html>
